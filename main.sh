@@ -1,10 +1,15 @@
 #!/bin/bash
 
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' 
+
 while true; do
 
 chmod +x *.sh
 
-echo "choice:"
+echo -en "${GREEN} choice${NC}\n"
+
 
 echo "1. install Zsh"
 echo "2. install software"
@@ -26,7 +31,14 @@ case $choice in
     4)
         ./yay.sh
         ;;
-    5) 
+    5)
+        ./i3.sh
+        ;;  
+
+    6)
+        ./config_i3.sh
+        ;;          
+    7) 
         echo "exit"
         exit 0
         ;;

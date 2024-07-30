@@ -1,6 +1,12 @@
 #!/bin/bash
 
-echo "For c/c++"
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' 
+
+
+
+echo -en "${GREEN}For c/c++${NC}"
 
 sudo pacman -Suy
 
@@ -16,14 +22,15 @@ sudo pacman -S vim neovim
 
 yay -S visual-studio-code-bin
 
-echo "done."
+echo -en "${GREEN}done.${NC}"
 
-echo "install zsh? (Y/N)"
+echo -en "${GREEN}continue? (Y/N)${NC}"
 read answer
 
 if [[ "$answer" == "Y" ]]; then
 
 ./main.sh
+
 else 
-    echo "abort installing."
+    echo -en "abort installing."
 fi

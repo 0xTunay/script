@@ -4,21 +4,16 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' 
 
+echo -en "${GREEN}continue installing i3${NC}"
 
-echo -en "${GREEN}Yay...${NC}"
+git clone https://github.com/0xTunay/cfg_i3.git
 
-sudo pacman -S --needed base-devel git
+mv ~/.config/i3 ~/.config/i3.bak
 
-git clone https://aur.archlinux.org/yay.git
+cp ~/cfg_i3/config ~/.config/i3
 
-cd yay
+rm -rf cfg_i3
 
-makepkg -si
-
-cd ..
-rm -rf yay
-
-echo -en "${GREEN}Yay installed.${NC}"
 
 echo -en "${GREEN}continue? (Y/N)${NC}"
 read answer

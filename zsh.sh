@@ -1,5 +1,9 @@
 #!/bin/bash
 
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m'
+
 # ZSH TERMINAL
 
 echo "install zsh"
@@ -10,11 +14,11 @@ sudo pacman -Suy
 # Install git
 sudo pacman -S git
 
-echo "install zsh? (Y/N)"
+echo "${YELLOW}install zsh? (Y/N)${NC}"
 read answer
 
 if [[ "$answer" == "Y" ]]; then
-    echo "INSTALLING ZSH"
+    echo -en "${GREEN}INSTALLING ZSH${NC}"
 
     # Install zsh, zsh-completions
     sudo pacman -Sy zsh zsh-completions
@@ -36,9 +40,8 @@ if [[ "$answer" == "Y" ]]; then
     sed -i 's/ZSH_THEME=".*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
     sed -i 's/plugins=(.*)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc
 
-    echo "extension and theme installed."
-
-else 
-    echo "abort installing."
+    echo -en "${GREEN}extension and theme installed.${NC}" 
+  else 
+    echo -en "${RED}abort installing.${NC}"
 fi
 ./main.sh

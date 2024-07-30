@@ -1,6 +1,15 @@
 #!/bin/bash
 
-echo "neovim"
+
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' 
+
+
+
+
+echo -en "${GREEN}neovim${NC}"
 
 mv ~/.config/nvim{,.bak}
 
@@ -14,7 +23,7 @@ git clone https://github.com/Ttunay/nvim.git ~/.config/nvim
 
 rm -rf ~/.config/nvim/.git
 
-echo "install zsh? (Y/N)"
+echo -en "${GREEN}continue? (Y/N)${NC}"
 read answer
 
 if [[ "$answer" == "Y" ]]; then
@@ -22,5 +31,5 @@ if [[ "$answer" == "Y" ]]; then
 ./main.sh
 
 else 
-    echo "abort installing."
+    echo -en "abort installing."
 fi

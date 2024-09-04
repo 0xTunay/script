@@ -38,7 +38,10 @@ case $choice in
     6)
         ./config_i3.sh
         ;;          
-    7) 
+    7)
+        ./config.sh
+        ;;
+    8)
         echo "exit"
         exit 0
         ;;

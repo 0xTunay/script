@@ -8,6 +8,8 @@ echo -en "${GREEN}continue installing i3${NC}"
 
 git clone https://github.com/0xTunay/cfg_i3.git
 
+cd ~/.config/i3 || mkdir -p i3 && cd i3
+
 mv ~/.config/i3 ~/.config/i3.bak
 
 cp ~/cfg_i3/config ~/.config/i3
